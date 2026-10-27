@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warung Soto</title>
+</head>
+<body>
+    <header class="header">
+        <div class="judul">Warung Soto Banjar Bu Ijah</div>
+        <nav class="menu">
+            <a href="#">Home</a> | <a href="#">Menu</a> | <a href="#">Kontak</a>
+        </nav>
+    </header>
+
+    <main class="konten">
+        <h1>Selamat Datang</h1>
+
+        <section>
+            <h2>Menu Favorit</h2>
+            <div>
+                <img src="img/soto-banjar.webp" alt="Semangkuk soto banjar">
+                <p><strong>Soto Banjar</strong> - Rp 20.000</p>
+            </div>
+            <div>
+                <img src="img/ketupat-kandangan.webp" alt="Ketupat Kandangan">
+                <p><strong>Ketupat Kandangan</strong> - Rp 25.000</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Reservasi</h2>
+            <form action="#" method="post">
+                <div>
+                    <label for="nama">Nama:</label>
+                    <input type="text" id="nama" name="nama" required>
+                </div>
+                <div>
+                    <label for="hp">No HP:</label>
+                    <input type="tel" id="hp" name="hp" required>
+                </div>
+                <div>
+                    <label for="tanggal">Tanggal:</label>
+                    <input type="date" id="tanggal" name="tanggal" required>
+                </div>
+                <div>
+                    <label for="jumlah">Jumlah orang:</label>
+                    <input type="number" id="jumlah" name="jumlah" min="1" required>
+                </div>
+                <input type="submit" value="Kirim">
+            </form>
+        </section>
+
+        <p>Klik <a href="https://maps.google.com">di sini</a> untuk melihat lokasi.</p>
+    </main>
+
+    <footer class="footer">Copyright 2026</footer>
+</body>
+</html>
