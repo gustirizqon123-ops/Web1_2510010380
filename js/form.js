@@ -8,7 +8,7 @@
  const tautanWa = document.querySelector("#tautan-wa"); 
  
  // Nomor WhatsApp toko (FIKTIF, hanya untuk latihan) 
- const NOMOR_TOKO = "6281234567890"; 
+ const NOMOR_TOKO = "6285166626282";
   
  // 1. Aturan validasi: fungsi pemeriksa + pesan kesalahan untuk tiap kolom 
  const aturan = { 
@@ -21,9 +21,9 @@
      pesan: "Nomor WhatsApp diawali 08 dan terdiri atas 10–13 digit angka.", 
    }, 
    email: { 
-     // email boleh kosong; jika diisi, formatnya harus benar 
-     cek: (nilai) => nilai.trim() === "" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(nilai.trim()), 
-     pesan: "Format surel belum benar, contoh: nama@domain.com.", 
+     // email wajib diisi dan formatnya harus benar
+     cek: (nilai) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(nilai.trim()),
+     pesan: "Surel wajib diisi dengan format yang benar, contoh: nama@domain.com.",
    }, 
    produk: { 
      cek: (nilai) => nilai !== "", 
@@ -32,9 +32,13 @@
    jumlah: { 
      cek: (nilai) => Number.isInteger(Number(nilai)) && Number(nilai) >= 1 && Number(nilai) 
 <= 50, 
-     pesan: "Jumlah harus bilangan bulat 1 sampai 50.", 
-   }, 
- }; 
+     pesan: "Jumlah harus bilangan bulat 1 sampai 50.",
+   },
+   catatan: {
+     cek: (nilai) => nilai.trim().length >= 3,
+     pesan: "Catatan wajib diisi, minimal 3 karakter.",
+   },
+ };
   
  // 2. Menampilkan (atau menghapus) pesan kesalahan sebuah kolom 
  function tampilkanError(input, pesan) { 
@@ -58,7 +62,7 @@
  }
 
   // 4. Daftar kolom yang perlu diperiksa 
- const kolomDiperiksa = ["nama", "wa", "email", "produk", "jumlah", "setuju"].map( 
+ const kolomDiperiksa = ["nama", "wa", "email", "produk", "jumlah", "catatan", "setuju"].map( 
    (nama) => form.elements[nama] 
  ); 
   
@@ -98,7 +102,9 @@
      `Produk: ${data.get("produk")}`, 
      `Jumlah: ${data.get("jumlah")}`, 
      `Pengambilan: ${data.get("pengambilan")}`, 
-     `Catatan: ${data.get("catatan").trim() || "-"}`, 
+     `WhatsApp: ${data.get("wa").trim()}`,
+     `Surel: ${data.get("email").trim()}`,
+     `Catatan: ${data.get("catatan").trim()}`,
    ].join("\n"); 
   
    ringkasan.textContent = pesan; // textContent aman dari XSS 

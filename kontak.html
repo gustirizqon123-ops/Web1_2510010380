@@ -27,41 +27,44 @@
      <h1>Formulir Pemesanan</h1> 
      <p>Isi formulir berikut. Kolom bertanda <strong>*</strong> wajib diisi.</p> 
   
-     <form id="form-pesan" class="form-pesan" action="#" method="get novalidate"> 
-      <div class="kolom"> 
-        <label for="nama">Nama lengkap *</label> 
-        <input type="text" id="nama" name="nama" required minlength="3" autocomplete="name" aria-describedby="error-nama"> 
-        <p class="pesan-error" id="error-nama"></p> 
-      </div>> 
-  
-      <div class="kolom"> 
-        <label for="WA">Nomor WhatsApp *</label> 
-        <input type="text" id="WA" name="WA" required minlength="3" autocomplete="name" aria-describedby="error-WA"> 
-        <p class="pesan-error" id="error-WA"></p> 
-      </div>> 
+     <form id="form-pesan" class="form-pesan" action="#" method="get" novalidate>
+      <div class="kolom">
+        <label for="nama">Nama lengkap *</label>
+        <input type="text" id="nama" name="nama" required minlength="3" autocomplete="name" aria-describedby="error-nama">
+        <p class="pesan-error" id="error-nama"></p>
+      </div>
 
-      <div class="kolom"> 
-        <label for="email">Surel *</label> 
-        <input type="text" id="email" name="email" required minlength="3" autocomplete="name" aria-describedby="error-email"> 
+      <div class="kolom">
+        <label for="wa">Nomor WhatsApp *</label>
+        <input type="tel" id="wa" name="wa" required inputmode="numeric" autocomplete="tel" aria-describedby="error-wa">
+        <p class="pesan-error" id="error-wa"></p>
+      </div>
+
+      <div class="kolom">
+        <label for="email">Surel *</label>
+        <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="error-email">
         <p class="pesan-error" id="error-email"></p> 
       </div> 
   
        <div class="kolom"> 
          <label for="produk">Produk yang dipesan *</label> 
-         <select id="produk" name="produk" required> 
+         <select id="produk" name="produk" required aria-describedby="error-produk">
            <option value="">-- Pilih produk --</option> 
            <option>Kain Motif Gigi Haruan</option> 
            <option>Kain Motif Kambang Kacang</option> 
            <option>Selendang Iris Pudak</option> 
-           <option>Kemeja Bayam Raja</option> 
-           <option>Tas Naga Balimbur</option> 
-           <option>Gamis Ombak Sinapur Karang</option> 
-         </select> 
-       </div> 
+           <option>Bayam Raja</option>
+           <option>Ombak Sinapur Karang</option>
+           <option>Naga Balimbur</option>
+           <option>Daun Sajujur</option>
+           <option>Tampuk Manggis</option>
+         </select>
+         <p class="pesan-error" id="error-produk"></p>
+       </div>
   
       <div class="kolom"> 
         <label for="jumlah">Jumlah *</label> 
-        <input type="text" id="jumlah" name="jumlah" required minlength="3" autocomplete="name" aria-describedby="error-jumlah"> 
+        <input type="number" id="jumlah" name="jumlah" required min="1" max="50" step="1" value="1" aria-describedby="error-jumlah">
         <p class="pesan-error" id="error-jumlah"></p> 
       </div> 
   
@@ -73,7 +76,7 @@
   
       <div class="kolom"> 
         <label for="catatan">Catatan Tambahan *</label> 
-        <input type="text" id="catatan" name="catatan" required minlength="3" autocomplete="name" aria-describedby="error-catatan"> 
+        <input type="text" id="catatan" name="catatan" required minlength="3" autocomplete="off" aria-describedby="error-catatan">
         <p class="pesan-error" id="error-catatan"></p> 
       </div> 
   
