@@ -25,7 +25,7 @@
      id: 3, 
      nama: "Selendang Iris Pudak", 
      kategori: "aksesoris", 
-     harga: 120000, 
+     harga: 130000, 
      gambar: "img/iris-pudak.svg", 
      deskripsi: "Selendang ringan bermotif irisan daun pudak (pandan).", 
    }, 
@@ -33,7 +33,7 @@
      id: 4, 
      nama: "Bayam Raja", 
      kategori: "aksesoris", 
-     harga: 120000, 
+     harga: 140000, 
      gambar: "img/bayam-raja.svg", 
      deskripsi: "Selendang ringan bermotif irisan daun pudak (pandan).",
    },
@@ -41,7 +41,7 @@
      id: 5, 
      nama: "Ombak Sinapur Karang", 
      kategori: "aksesoris", 
-     harga: 120000, 
+     harga: 150000, 
      gambar: "img/ombak-sinapur-karang.svg", 
      deskripsi: "Selendang ringan bermotif irisan daun pudak (pandan).",
    },
@@ -49,11 +49,27 @@
      id: 6, 
      nama: "Naga Balimbur", 
      kategori: "aksesoris", 
-     harga: 120000, 
-     gambar: "img/naga-balimbur.svg", 
+     harga: 160000, 
+     gambar: "img/naga-balimbur.svg",
      deskripsi: "Selendang ringan bermotif irisan daun pudak (pandan).",
-   } 
- ]; 
+   },
+   {
+     id: 7,
+     nama: "Daun Sajujur",
+     kategori: "kain",
+     harga: 170000,
+     gambar: "img/sasirangan_daun_sajujur.svg",
+     deskripsi: "Kain dengan makna Menghindari bencana dan malapetaka",
+   },
+   {
+     id: 8,
+     nama: "Tampuk Manggis",
+     kategori: "kain",
+     harga: 180000,
+     gambar: "img/sasirangan_tampuk_manggis.svg",
+     deskripsi: "Kain dengan makna Kejujuran",
+   }
+ ];
 
  // 2. Ambil elemen-elemen HTML yang akan dimanipulasi 
 const daftarKatalog = document.querySelector("#daftar-katalog"); 
@@ -100,7 +116,7 @@ function formatRupiah(angka) {
   
    const harga = document.createElement("p"); 
    harga.className = "harga"; 
-   harga.textContent = formatRupiah(produk.harga); 
+   harga.textContent = produk.harga === "" ? "" : formatRupiah(produk.harga);
   
    isi.append(label, judul, deskripsi, harga); 
    kartu.append(gambar, isi); 
